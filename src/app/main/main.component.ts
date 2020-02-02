@@ -43,12 +43,12 @@ export class MainComponent implements OnInit {
 
      setTimeout(() => {
        window.location.reload();
-     }, 10000); // Activate after 10 seconds.
+     }, 5000); // Activate after 10 seconds.
 
     this.show();
-     this.interval = setInterval(() => {
-       this.refresh(); // api call
-    }, 10000);
+        this.interval = setInterval(() => {
+            this.show();
+        }, 10000);
   }
 
 
