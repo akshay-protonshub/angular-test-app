@@ -32,7 +32,7 @@ export class MainComponent implements OnInit {
     this.config = {
       itemsPerPage: 5,
       currentPage: 1,
-      
+
     };
    }
 
@@ -43,15 +43,12 @@ export class MainComponent implements OnInit {
 
      setTimeout(() => {
        window.location.reload();
-     }, 5000); // Activate after 10 seconds.
-    
+     }, 10000); // Activate after 10 seconds.
+
     this.show();
-        this.interval = setInterval(() => { 
-            this.show(); 
-        }, 5000);
-  //   this.interval = setInterval(() => {
-  //     this.refresh(); // api call
-  //  }, 10000);
+     this.interval = setInterval(() => {
+       this.refresh(); // api call
+    }, 10000);
   }
 
 
