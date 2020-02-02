@@ -1,0 +1,70 @@
+<!-- <form id="searchForm">
+    <div class="form-group">
+        <div class="input-group" id="filterAll">
+          <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div> -->
+          <!-- <label for="text">Search</label>
+
+
+          <input type="text" class="form-control" name="searchString" placeholder="Search..." [(ngModel)]="searchString">
+        </div>
+    </div>
+</form> --> 
+<div>
+        <form id="searchForm">
+                <div class="form-group">
+                  <div class="md-search">
+                    <label for="exampleInputEmail1">Search</label>
+                  </div> 
+                     <div class="input-group" id="filterAll">
+                      <!-- <div class="input-group-addon"><i class="glyphicon glyphicon-search"></i></div> -->
+                      <!-- <label for="exampleInputEmail1">Search</label> -->
+            
+            
+                      <input type="text" class="form-control" name="searchString" placeholder="Search..." [(ngModel)]="searchString">
+                    </div>
+                </div>
+        </form>
+<table class="table table-striped table-md">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Url</th>
+        <th scope="col">Created At</th>
+        <th scope="col">Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let items of value | paginate:{
+          itemsPerPage: 5,
+          currentPage: p,
+          totalItems: total
+      } | filterAll: searchString" (click)="openDialog()">
+        
+        <!-- <td>hits.title</td> -->
+        <td>{{items.title}}</td>
+        <td>{{items.url}}</td>
+        <td>{{items.created_at}}</td>
+        <td>{{items.author}}</td>
+
+      </tr>
+      <!-- <tr>
+        <th scope="row">2</th>
+        <td>Jacob</td>
+        <td>Thornton</td>
+        <td>@fat</td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Larry</td>
+        <td>the Bird</td>
+        <td>@twitter</td>
+      </tr> -->
+    </tbody>
+  </table>
+</div>
+
+<div id="pagination">
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+</div>    	
+
+<app-pop></app-pop>
